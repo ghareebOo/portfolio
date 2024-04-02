@@ -18,7 +18,7 @@
     --tweleve-color: hsl(289, 100%, 72%);
 }
 
-@media (min-width: 768px){
+/* @media (min-width: 768px){
     .container{
         width: 750px;
     }
@@ -34,10 +34,23 @@
     .container{
         width: 1170px;
     }
+} */
+.container{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    /* margin: 10% auto; */
+    padding: 0 !important;
+
+}
+html{
+    height: 100%;
 }
 body{
     background-color: var(--nine-color);
     font-family: "Rubik", sans-serif;
+    height: 100%;
 }
 p{
     font-size: 16px;
@@ -46,11 +59,12 @@ i{
     font-size: 10px;
     font-weight: 700;
 }
-.container{
-    display: flex;
-}
+
 .first{
+    margin: 0;
+    height: 100vh;
     width: 50%;
+    
 }
 .back1{
     position: absolute;
@@ -74,10 +88,14 @@ i{
 }
 .tel{
    position: relative;
+    /* top: 2rem;
+    left: 2rem; */
+    margin: 30% auto;
+
 }
 .border{
     margin-bottom: 5rem;
-    width: 285px;
+    max-width: 285px;
     min-height: 450px;
     position: absolute;
     top: 2.5rem;
@@ -86,6 +104,7 @@ i{
     overflow-x: hidden;
     background-color: var(--four-color);
     border: 8px solid white !important;
+    box-shadow: 0 0 10px 0 var(--thrid-color);
 }
 .bg-white{
     width: 110px;
@@ -230,6 +249,7 @@ form i{
     align-items: center;
 }
 .book{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -249,21 +269,49 @@ form i{
     font-weight: 500;
 }
 @media(max-width: 991px){
+    html, body{
+        width:  100%; 
+        height: 100%;
+        padding: 0;
+        margin: 0;
+   }
     .container{
         display: flex;
         flex-direction: column;
+        width: 90%;
+        
     }
-    .first{
+    .tel {
         width: 100%;
-        height: 100vh;
+       
+    }
+    
+    .first{
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        justify-items: center;
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .back1{
+        height: 95vh;
+        width: 60%;
+        left: -3.5rem;
+        top: 0rem;
     }
     .second{
         height: auto;
         width: 100%;
     }
     .border{
-        top: 2.5rem;
-        left: 40%
+        /* position: static; */    /* this can solve part of the problem but not all */
+        margin: 0 auto;
+        padding: 0;
+
     }
     .back1{
         height: 95vh;
@@ -303,4 +351,5 @@ form i{
     .book p{
         width: auto;
     }
+    
 }
